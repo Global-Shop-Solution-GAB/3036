@@ -1,0 +1,85 @@
+Program.Sub.ScreenSU.Start
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+V.Local.fileloc.Declare(String)
+Variable.Local.ReadFile.Declare(String)
+V.Local.iarray.Declare(String)
+V.Local.irow.Declare(String)
+V.Local.ipos.Declare(String)
+V.Local.ilen.Declare(String)
+V.Local.x.Declare(Long)
+V.Local.filehdl.Declare(Long)
+V.Local.fileend.Declare(Boolean)
+V.Local.source.Declare(String)
+V.Local.sSQL.Declare(String)
+
+
+F.ODBC.Connection!Conn.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+
+Function.Intrinsic.UI.ShowOpenFileDialog("","*.*","C:\",Variable.local.FileLoc)
+
+Function.Intrinsic.Control.If(Variable.local.FileLoc,=,"***CANCEL***")
+	F.Intrinsic.Control.End
+Function.Intrinsic.Control.EndIf
+
+F.Intrinsic.File.GetHandle(V.Local.filehdl)
+F.Intrinsic.File.OpenForRead(V.Local.fileloc,V.Local.filehdl)
+
+F.Intrinsic.Control.DoUntil(V.Local.fileend,=,True)
+	F.Intrinsic.String.Split("5*!*15*!*34*!*94*!*98*!*101*!*104*!*131","*!*",V.Local.ipos)
+	F.Intrinsic.String.Split("2*!*3*!*30*!*2*!*2*!*2*!*2*!*12","*!*",V.Local.ilen)
+	F.Intrinsic.File.ReadLine(V.Local.filehdl,V.Local.irow)
+	F.Intrinsic.String.PositionalSplit(V.Local.irow,V.Local.ipos,V.Local.ilen,V.Local.irow)
+
+	F.ODBC.Connection!Conn.OpenRecordsetRW("rst","Select * from ATG_12_PART_GENERATOR")
+	F.Intrinsic.Control.If(V.Local.irow(0),=,"01")
+		F.ODBC.Conn!rst.AddNew
+		F.ODBC.Conn!rst.Set!Part_Prefix_No(V.Local.irow(1))
+		F.ODBC.Conn!rst.Set!Part_suffix("000")
+		F.ODBC.Conn!rst.Set!Part_no("00001")
+		F.ODBC.Conn!rst.Set!Description(V.Local.irow(2))
+		F.ODBC.Conn!rst.Set!PL(V.Local.irow(3))
+		F.ODBC.Conn!rst.Set!Inv_UM(V.Local.irow(4))
+		F.ODBC.Conn!rst.Set!Purch_UM(V.Local.irow(5))
+		F.ODBC.Conn!rst.Set!Sort_Code(V.Local.irow(6))
+
+		F.Intrinsic.Control.SelectCase(V.Local.irow(7))
+			F.Intrinsic.Control.Case("Purch to Stock")
+				V.Local.source.Set("P")
+			F.Intrinsic.Control.Case("Purch to Job")
+				V.Local.source.Set("J")
+			F.Intrinsic.Control.Case("Manuf to Stock")
+				V.Local.source.Set("M")
+			F.Intrinsic.Control.Case("Manuf to Job")
+				V.Local.source.Set("F")
+			F.Intrinsic.Control.Case("Consign to Stock")
+				V.Local.source.Set("C")
+			F.Intrinsic.Control.Case("Consign to Job")
+				V.Local.source.Set("G")
+		F.Intrinsic.Control.EndSelect
+
+		F.ODBC.Conn!rst.Set!Source(V.Local.source)
+		F.ODBC.Conn!rst.Update
+	F.Intrinsic.Control.EndIf
+	F.ODBC.Conn!rst.Close
+	F.Intrinsic.String.Concat("Select * from ATG_12_PART_GENERATOR where Part_Prefix_No='",V.Local.irow(1),"'",V.Local.sSQL)
+
+	F.ODBC.Connection!Conn.OpenRecordsetRW("RST",V.Local.sSQL)
+	F.Intrinsic.Control.If(V.ODBC.Conn!rst.EOF,=,False)
+		F.ODBC.Conn!rst.Set!Alt_Description1(V.Local.irow(2))
+		F.ODBC.Conn!rst.Update
+	F.Intrinsic.Control.EndIf
+		F.ODBC.Conn!rst.Close
+	F.Intrinsic.File.EOF(V.Local.filehdl,V.Local.fileend)
+F.Intrinsic.Control.Loop
+
+F.Intrinsic.Control.End
+
+Program.Sub.Main.End
+
+
