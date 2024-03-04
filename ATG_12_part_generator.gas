@@ -1,0 +1,857 @@
+Program.Sub.ScreenSU.Start
+gui.Partmain..create
+gui.Partmain..caption("Part Generator")
+gui.Partmain..size(5865,3405)
+gui.Partmain..position(0,0)
+gui.Partmain..event(unload,End)
+gui.Partmain..alwaysontop(False)
+gui.Partmain..fontname("Arial")
+gui.Partmain..fontsize(8)
+gui.Partmain..forecolor(0)
+gui.Partmain..fontstyle(False,False,False,False,False)
+gui.Partmain..BackColor(-2147483633)
+gui.Partmain..controlbox(True)
+gui.Partmain..maxbutton(False)
+gui.Partmain..minbutton(True)
+gui.Partmain..mousepointer(0)
+gui.Partmain..moveable(True)
+gui.Partmain..sizeable(False)
+gui.Partmain..ShowInTaskBar(True)
+gui.Partmain..titlebar(True)
+gui.Partmain.txtPrefix.create(textbox)
+gui.Partmain.txtPrefix.text("")
+gui.Partmain.txtPrefix.visible(True)
+gui.Partmain.txtPrefix.size(585,315)
+gui.Partmain.txtPrefix.zorder(0)
+gui.Partmain.txtPrefix.position(170,290)
+gui.Partmain.txtPrefix.enabled(True)
+gui.Partmain.txtPrefix.fontname("Arial")
+gui.Partmain.txtPrefix.fontsize(8)
+gui.Partmain.txtPrefix.maxLength(3)
+gui.Partmain.txtPrefix.event(lostfocus,txtprefix_change)
+gui.Partmain.txtPrefix.BackColor(-2147483643)
+gui.Partmain.txtPart.create(textbox)
+gui.Partmain.txtPart.text("")
+gui.Partmain.txtPart.visible(True)
+gui.Partmain.txtPart.size(660,315)
+gui.Partmain.txtPart.zorder(0)
+gui.Partmain.txtPart.position(955,290)
+gui.Partmain.txtPart.enabled(True)
+gui.Partmain.txtPart.fontname("Arial")
+gui.Partmain.txtPart.fontsize(8)
+gui.Partmain.txtPart.maxLength(5)
+gui.Partmain.txtPart.BackColor(-2147483643)
+gui.Partmain.txtSuffix.create(textbox)
+gui.Partmain.txtSuffix.text("000")
+gui.Partmain.txtSuffix.visible(True)
+gui.Partmain.txtSuffix.size(585,315)
+gui.Partmain.txtSuffix.zorder(0)
+gui.Partmain.txtSuffix.position(1805,290)
+gui.Partmain.txtSuffix.enabled(False)
+gui.Partmain.txtSuffix.fontname("Arial")
+gui.Partmain.txtSuffix.fontsize(8)
+gui.Partmain.txtSuffix.maxLength(3)
+gui.Partmain.txtSuffix.BackColor(-2147483643)
+gui.Partmain.cmdBrowse.create(button)
+gui.Partmain.cmdBrowse.caption("")
+gui.Partmain.cmdBrowse.visible(True)
+gui.Partmain.cmdBrowse.size(315,255)
+gui.Partmain.cmdBrowse.zorder(0)
+gui.Partmain.cmdBrowse.position(2435,305)
+gui.Partmain.cmdBrowse.enabled(True)
+gui.Partmain.cmdBrowse.fontname("Arial")
+gui.Partmain.cmdBrowse.fontsize(8)
+gui.Partmain.cmdBrowse.event(click,cmdbrowse_click)
+gui.Partmain.lbl1.create(label)
+gui.Partmain.lbl1.caption("Prefix")
+gui.Partmain.lbl1.backstyle(0)
+gui.Partmain.lbl1.visible(True)
+gui.Partmain.lbl1.size(660,255)
+gui.Partmain.lbl1.zorder(1)
+gui.Partmain.lbl1.position(200,60)
+gui.Partmain.lbl1.enabled(True)
+gui.Partmain.lbl1.fontname("Arial")
+gui.Partmain.lbl1.fontsize(8)
+gui.Partmain.lbl1.BackColor(-2147483633)
+gui.Partmain.lbl2.create(label)
+gui.Partmain.lbl2.caption("Start Point")
+gui.Partmain.lbl2.backstyle(0)
+gui.Partmain.lbl2.visible(True)
+gui.Partmain.lbl2.size(780,255)
+gui.Partmain.lbl2.zorder(1)
+gui.Partmain.lbl2.position(960,60)
+gui.Partmain.lbl2.enabled(True)
+gui.Partmain.lbl2.fontname("Arial")
+gui.Partmain.lbl2.fontsize(8)
+gui.Partmain.lbl2.BackColor(-2147483633)
+gui.Partmain.lbl3.create(label)
+gui.Partmain.lbl3.caption("Suffix")
+gui.Partmain.lbl3.backstyle(0)
+gui.Partmain.lbl3.visible(True)
+gui.Partmain.lbl3.size(690,255)
+gui.Partmain.lbl3.zorder(1)
+gui.Partmain.lbl3.position(1840,60)
+gui.Partmain.lbl3.enabled(True)
+gui.Partmain.lbl3.fontname("Arial")
+gui.Partmain.lbl3.fontsize(8)
+gui.Partmain.lbl3.BackColor(-2147483633)
+gui.Partmain.txtinvUM.create(textbox)
+gui.Partmain.txtinvUM.text("")
+gui.Partmain.txtinvUM.visible(True)
+gui.Partmain.txtinvUM.size(510,315)
+gui.Partmain.txtinvUM.zorder(0)
+gui.Partmain.txtinvUM.position(2815,290)
+gui.Partmain.txtinvUM.enabled(True)
+gui.Partmain.txtinvUM.fontname("Arial")
+gui.Partmain.txtinvUM.fontsize(8)
+gui.Partmain.txtinvUM.maxLength(2)
+gui.Partmain.txtinvUM.BackColor(-2147483643)
+gui.Partmain.lbl4.create(label)
+gui.Partmain.lbl4.caption("-")
+gui.Partmain.lbl4.backstyle(0)
+gui.Partmain.lbl4.visible(True)
+gui.Partmain.lbl4.size(165,240)
+gui.Partmain.lbl4.zorder(1)
+gui.Partmain.lbl4.position(775,295)
+gui.Partmain.lbl4.enabled(True)
+gui.Partmain.lbl4.fontname("Arial")
+gui.Partmain.lbl4.fontsize(8)
+gui.Partmain.lbl4.BackColor(-2147483633)
+gui.Partmain.lbl5.create(label)
+gui.Partmain.lbl5.caption("-")
+gui.Partmain.lbl5.backstyle(0)
+gui.Partmain.lbl5.visible(True)
+gui.Partmain.lbl5.size(135,255)
+gui.Partmain.lbl5.zorder(1)
+gui.Partmain.lbl5.position(200,200)
+gui.Partmain.lbl5.enabled(True)
+gui.Partmain.lbl5.fontname("Arial")
+gui.Partmain.lbl5.fontsize(8)
+gui.Partmain.lbl5.BackColor(-2147483633)
+gui.Partmain.lbl6.create(label)
+gui.Partmain.lbl6.caption("-")
+gui.Partmain.lbl6.backstyle(0)
+gui.Partmain.lbl6.visible(True)
+gui.Partmain.lbl6.size(165,240)
+gui.Partmain.lbl6.zorder(1)
+gui.Partmain.lbl6.position(200,200)
+gui.Partmain.lbl6.enabled(True)
+gui.Partmain.lbl6.fontname("Arial")
+gui.Partmain.lbl6.fontsize(8)
+gui.Partmain.lbl6.BackColor(-2147483633)
+gui.Partmain.lbl7.create(label)
+gui.Partmain.lbl7.caption("-")
+gui.Partmain.lbl7.backstyle(0)
+gui.Partmain.lbl7.visible(True)
+gui.Partmain.lbl7.size(120,210)
+gui.Partmain.lbl7.zorder(1)
+gui.Partmain.lbl7.position(1645,300)
+gui.Partmain.lbl7.enabled(True)
+gui.Partmain.lbl7.fontname("Arial")
+gui.Partmain.lbl7.fontsize(8)
+gui.Partmain.lbl7.BackColor(-2147483633)
+gui.Partmain.txtPurchUM.create(textbox)
+gui.Partmain.txtPurchUM.text("")
+gui.Partmain.txtPurchUM.visible(True)
+gui.Partmain.txtPurchUM.size(510,315)
+gui.Partmain.txtPurchUM.zorder(0)
+gui.Partmain.txtPurchUM.position(3515,290)
+gui.Partmain.txtPurchUM.enabled(True)
+gui.Partmain.txtPurchUM.fontname("Arial")
+gui.Partmain.txtPurchUM.fontsize(8)
+gui.Partmain.txtPurchUM.maxLength(2)
+gui.Partmain.txtPurchUM.BackColor(-2147483643)
+gui.Partmain.txtDescription.create(textbox)
+gui.Partmain.txtDescription.text("")
+gui.Partmain.txtDescription.visible(True)
+gui.Partmain.txtDescription.size(2650,315)
+gui.Partmain.txtDescription.zorder(0)
+gui.Partmain.txtDescription.position(170,820)
+gui.Partmain.txtDescription.enabled(True)
+gui.Partmain.txtDescription.fontname("Arial")
+gui.Partmain.txtDescription.fontsize(8)
+gui.Partmain.txtDescription.maxLength(30)
+gui.Partmain.txtDescription.BackColor(-2147483643)
+gui.Partmain.txtDescription1.create(textbox)
+gui.Partmain.txtDescription1.text("")
+gui.Partmain.txtDescription1.visible(True)
+gui.Partmain.txtDescription1.size(2650,315)
+gui.Partmain.txtDescription1.zorder(0)
+gui.Partmain.txtDescription1.position(2890,820)
+gui.Partmain.txtDescription1.enabled(True)
+gui.Partmain.txtDescription1.fontname("Arial")
+gui.Partmain.txtDescription1.fontsize(8)
+gui.Partmain.txtDescription1.maxLength(30)
+gui.Partmain.txtDescription1.BackColor(-2147483643)
+gui.Partmain.txtShape.create(textbox)
+gui.Partmain.txtShape.text("")
+gui.Partmain.txtShape.visible(True)
+gui.Partmain.txtShape.size(2040,315)
+gui.Partmain.txtShape.zorder(0)
+gui.Partmain.txtShape.position(170,1330)
+gui.Partmain.txtShape.enabled(True)
+gui.Partmain.txtShape.fontname("Arial")
+gui.Partmain.txtShape.fontsize(8)
+gui.Partmain.txtShape.BackColor(-2147483643)
+gui.Partmain.lbl8.create(label)
+gui.Partmain.lbl8.caption("Inv UM")
+gui.Partmain.lbl8.backstyle(0)
+gui.Partmain.lbl8.visible(True)
+gui.Partmain.lbl8.size(525,255)
+gui.Partmain.lbl8.zorder(1)
+gui.Partmain.lbl8.position(2860,60)
+gui.Partmain.lbl8.enabled(True)
+gui.Partmain.lbl8.fontname("Arial")
+gui.Partmain.lbl8.fontsize(8)
+gui.Partmain.lbl8.BackColor(-2147483633)
+gui.Partmain.lbl9.create(label)
+gui.Partmain.lbl9.caption("Pur UM")
+gui.Partmain.lbl9.backstyle(0)
+gui.Partmain.lbl9.visible(True)
+gui.Partmain.lbl9.size(825,210)
+gui.Partmain.lbl9.zorder(1)
+gui.Partmain.lbl9.position(3540,60)
+gui.Partmain.lbl9.enabled(True)
+gui.Partmain.lbl9.fontname("Arial")
+gui.Partmain.lbl9.fontsize(8)
+gui.Partmain.lbl9.BackColor(-2147483633)
+gui.Partmain.lbl10.create(label)
+gui.Partmain.lbl10.caption("Description")
+gui.Partmain.lbl10.backstyle(0)
+gui.Partmain.lbl10.visible(True)
+gui.Partmain.lbl10.size(1935,255)
+gui.Partmain.lbl10.zorder(1)
+gui.Partmain.lbl10.position(170,600)
+gui.Partmain.lbl10.enabled(True)
+gui.Partmain.lbl10.fontname("Arial")
+gui.Partmain.lbl10.fontsize(8)
+gui.Partmain.lbl10.BackColor(-2147483633)
+gui.Partmain.lbl11.create(label)
+gui.Partmain.lbl11.caption("Alt Description 1")
+gui.Partmain.lbl11.backstyle(0)
+gui.Partmain.lbl11.visible(True)
+gui.Partmain.lbl11.size(1935,255)
+gui.Partmain.lbl11.zorder(1)
+gui.Partmain.lbl11.position(2935,610)
+gui.Partmain.lbl11.enabled(True)
+gui.Partmain.lbl11.fontname("Arial")
+gui.Partmain.lbl11.fontsize(8)
+gui.Partmain.lbl11.BackColor(-2147483633)
+gui.Partmain.lbl12.create(label)
+gui.Partmain.lbl12.caption("Drawing Number")
+gui.Partmain.lbl12.backstyle(0)
+gui.Partmain.lbl12.visible(False)
+gui.Partmain.lbl12.size(1935,255)
+gui.Partmain.lbl12.zorder(1)
+gui.Partmain.lbl12.position(200,1115)
+gui.Partmain.lbl12.enabled(True)
+gui.Partmain.lbl12.fontname("Arial")
+gui.Partmain.lbl12.fontsize(8)
+gui.Partmain.lbl12.BackColor(-2147483633)
+gui.Partmain.txtPL.create(textbox)
+gui.Partmain.txtPL.text("")
+gui.Partmain.txtPL.visible(True)
+gui.Partmain.txtPL.size(345,315)
+gui.Partmain.txtPL.zorder(0)
+gui.Partmain.txtPL.position(2285,1315)
+gui.Partmain.txtPL.enabled(True)
+gui.Partmain.txtPL.fontname("Arial")
+gui.Partmain.txtPL.fontsize(8)
+gui.Partmain.txtPL.maxLength(2)
+gui.Partmain.txtPL.BackColor(-2147483643)
+gui.Partmain.lbl13.create(label)
+gui.Partmain.lbl13.caption("PL")
+gui.Partmain.lbl13.backstyle(0)
+gui.Partmain.lbl13.visible(True)
+gui.Partmain.lbl13.size(195,165)
+gui.Partmain.lbl13.zorder(1)
+gui.Partmain.lbl13.position(2345,1115)
+gui.Partmain.lbl13.enabled(True)
+gui.Partmain.lbl13.fontname("Arial")
+gui.Partmain.lbl13.fontsize(8)
+gui.Partmain.lbl13.BackColor(-2147483633)
+gui.Partmain.lbl14.create(label)
+gui.Partmain.lbl14.caption("Source")
+gui.Partmain.lbl14.backstyle(0)
+gui.Partmain.lbl14.visible(True)
+gui.Partmain.lbl14.size(540,180)
+gui.Partmain.lbl14.zorder(1)
+gui.Partmain.lbl14.position(2725,1115)
+gui.Partmain.lbl14.enabled(True)
+gui.Partmain.lbl14.fontname("Arial")
+gui.Partmain.lbl14.fontsize(8)
+gui.Partmain.lbl14.BackColor(-2147483633)
+gui.Partmain.txtSortCode.create(textbox)
+gui.Partmain.txtSortCode.text("")
+gui.Partmain.txtSortCode.visible(True)
+gui.Partmain.txtSortCode.size(1000,315)
+gui.Partmain.txtSortCode.zorder(0)
+gui.Partmain.txtSortCode.position(4220,290)
+gui.Partmain.txtSortCode.enabled(True)
+gui.Partmain.txtSortCode.fontname("Arial")
+gui.Partmain.txtSortCode.fontsize(8)
+gui.Partmain.txtSortCode.maxLength(10)
+gui.Partmain.txtSortCode.BackColor(-2147483643)
+gui.Partmain.lbl15.create(label)
+gui.Partmain.lbl15.caption("Sort Code")
+gui.Partmain.lbl15.backstyle(0)
+gui.Partmain.lbl15.visible(True)
+gui.Partmain.lbl15.size(810,255)
+gui.Partmain.lbl15.zorder(1)
+gui.Partmain.lbl15.position(4235,75)
+gui.Partmain.lbl15.enabled(True)
+gui.Partmain.lbl15.fontname("Arial")
+gui.Partmain.lbl15.fontsize(8)
+gui.Partmain.lbl15.BackColor(-2147483633)
+gui.Partmain.cmdSave.create(button)
+gui.Partmain.cmdSave.caption("Save Start")
+gui.Partmain.cmdSave.visible(True)
+gui.Partmain.cmdSave.size(855,450)
+gui.Partmain.cmdSave.zorder(0)
+gui.Partmain.cmdSave.position(1255,2400)
+gui.Partmain.cmdSave.enabled(True)
+gui.Partmain.cmdSave.fontname("Arial")
+gui.Partmain.cmdSave.fontsize(8)
+gui.Partmain.cmdSave.event(click,cmdsave_click)
+gui.Partmain.cmdClear.create(button)
+gui.Partmain.cmdClear.caption("Clear")
+gui.Partmain.cmdClear.visible(True)
+gui.Partmain.cmdClear.size(855,390)
+gui.Partmain.cmdClear.zorder(0)
+gui.Partmain.cmdClear.position(2300,2400)
+gui.Partmain.cmdClear.enabled(True)
+gui.Partmain.cmdClear.fontname("Arial")
+gui.Partmain.cmdClear.fontsize(8)
+gui.Partmain.cmdClear.event(click,cmdclear_click)
+gui.Partmain.cmdGlobal.create(button)
+gui.Partmain.cmdGlobal.caption("Upload")
+gui.Partmain.cmdGlobal.visible(True)
+gui.Partmain.cmdGlobal.size(855,360)
+gui.Partmain.cmdGlobal.zorder(0)
+gui.Partmain.cmdGlobal.position(4300,2400)
+gui.Partmain.cmdGlobal.enabled(True)
+gui.Partmain.cmdGlobal.fontname("Arial")
+gui.Partmain.cmdGlobal.fontsize(8)
+gui.Partmain.cmdGlobal.event(click,cmdglobal_click)
+gui.Partmain.cmdDelete.create(button)
+gui.Partmain.cmdDelete.caption("Delete")
+gui.Partmain.cmdDelete.visible(True)
+gui.Partmain.cmdDelete.size(855,375)
+gui.Partmain.cmdDelete.zorder(0)
+gui.Partmain.cmdDelete.position(3300,2400)
+gui.Partmain.cmdDelete.enabled(True)
+gui.Partmain.cmdDelete.fontname("Arial")
+gui.Partmain.cmdDelete.fontsize(8)
+gui.Partmain.cmdDelete.event(click,cmddelete_click)
+gui.Partmain.ddSource.create(dropdownlist)
+gui.Partmain.ddSource.visible(True)
+gui.Partmain.ddSource.size(1950,330)
+gui.Partmain.ddSource.zorder(0)
+gui.Partmain.ddSource.position(2700,1315)
+gui.Partmain.ddSource.enabled(True)
+gui.Partmain.ddSource.fontname("Arial")
+gui.Partmain.ddSource.fontsize(8)
+gui.Partmain.cmdNew.create(button)
+gui.Partmain.cmdNew.caption("Generate")
+gui.Partmain.cmdNew.visible(True)
+gui.Partmain.cmdNew.size(855,375)
+gui.Partmain.cmdNew.zorder(0)
+gui.Partmain.cmdNew.position(200,2400)
+gui.Partmain.cmdNew.enabled(True)
+gui.Partmain.cmdNew.fontname("Arial")
+gui.Partmain.cmdNew.fontsize(8)
+gui.Partmain.cmdNew.event(click,cmdnew_click)
+gui.Partmain.lbl16.create(label)
+gui.Partmain.lbl16.caption("Lot/Bin")
+gui.Partmain.lbl16.backstyle(0)
+gui.Partmain.lbl16.visible(True)
+gui.Partmain.lbl16.size(765,255)
+gui.Partmain.lbl16.zorder(1)
+gui.Partmain.lbl16.position(4700,1115)
+gui.Partmain.lbl16.enabled(True)
+gui.Partmain.lbl16.fontname("Arial")
+gui.Partmain.lbl16.fontsize(8)
+gui.Partmain.lbl16.BackColor(-2147483633)
+gui.Partmain.txtlotbin.create(textbox)
+gui.Partmain.txtlotbin.text("Y")
+gui.Partmain.txtlotbin.visible(True)
+gui.Partmain.txtlotbin.size(240,315)
+gui.Partmain.txtlotbin.zorder(0)
+gui.Partmain.txtlotbin.position(4800,1300)
+gui.Partmain.txtlotbin.enabled(False)
+gui.Partmain.txtlotbin.fontname("Arial")
+gui.Partmain.txtlotbin.fontsize(8)
+gui.Partmain.txtlotbin.BackColor(-2147483643)
+gui.Partmain.txtextra.create(textbox)
+gui.Partmain.txtextra.text("")
+gui.Partmain.txtextra.visible(True)
+gui.Partmain.txtextra.size(5000,315)
+gui.Partmain.txtextra.zorder(0)
+gui.Partmain.txtextra.position(185,1900)
+gui.Partmain.txtextra.enabled(True)
+gui.Partmain.txtextra.fontname("Arial")
+gui.Partmain.txtextra.maxLength(60)
+gui.Partmain.txtextra.BackColor(-2147483643)
+gui.Partmain.lbl17.create(label)
+gui.Partmain.lbl17.caption("Extra Description")
+gui.Partmain.lbl17.backstyle(0)
+gui.Partmain.lbl17.visible(True)
+gui.Partmain.lbl17.size(1935,255)
+gui.Partmain.lbl17.zorder(1)
+gui.Partmain.lbl17.position(215,1660)
+gui.Partmain.lbl17.enabled(True)
+gui.Partmain.lbl17.fontname("Arial")
+gui.Partmain.lbl17.BackColor(-2147483633)
+gui.Partmain.txtPrefix.tabstop(True)
+gui.Partmain.txtPrefix.tabindex(1)
+gui.Partmain.txtPart.tabstop(True)
+gui.Partmain.txtPart.tabindex(2)
+gui.Partmain.txtSuffix.tabstop(True)
+gui.Partmain.txtSuffix.tabindex(3)
+gui.Partmain.txtinvUM.tabstop(True)
+gui.Partmain.txtinvUM.tabindex(4)
+gui.Partmain.txtPurchUM.tabstop(True)
+gui.Partmain.txtPurchUM.tabindex(5)
+gui.Partmain.txtSortCode.tabstop(True)
+gui.Partmain.txtSortCode.tabindex(6)
+gui.Partmain.txtDescription.tabstop(True)
+gui.Partmain.txtDescription.tabindex(7)
+gui.Partmain.txtDescription1.tabstop(True)
+gui.Partmain.txtDescription1.tabindex(8)
+gui.Partmain.txtShape.tabstop(True)
+gui.Partmain.txtShape.tabindex(9)
+gui.Partmain.txtPL.tabstop(True)
+gui.Partmain.txtPL.tabindex(10)
+gui.Partmain.cmdSave.tabstop(True)
+gui.Partmain.cmdSave.tabindex(12)
+gui.Partmain.cmdClear.tabstop(True)
+gui.Partmain.cmdClear.tabindex(13)
+gui.Partmain.cmdDelete.tabstop(True)
+gui.Partmain.cmdDelete.tabindex(14)
+gui.Partmain.cmdGlobal.tabstop(True)
+gui.Partmain.cmdGlobal.tabindex(15)
+gui.Partmain.cmdBrowse.tabstop(True)
+gui.Partmain.cmdBrowse.tabindex(16)
+
+
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'This is the Aqua Chem Part Number Generator
+V.Global.new.Declare(Boolean)
+V.Global.new.Set(False)
+Gui.Partmain..Show
+
+F.ODBC.Connection!Conn.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+
+Gui.Partmain.ddSource.AddItem("Purch to Stock",1)
+Gui.Partmain.ddSource.AddItem("Purch to Job",2)
+Gui.Partmain.ddSource.AddItem("Manuf to Stock",3)
+Gui.Partmain.ddSource.AddItem("Manuf to Job",4)
+Gui.Partmain.ddSource.AddItem("Consign to Stock",5)
+Gui.Partmain.ddSource.AddItem("Consign to Job",6)
+Gui.Partmain.ddSource.ListIndex(3)
+
+'P
+'J
+'M
+'F
+'C
+'G
+
+Program.Sub.Main.End
+
+Program.Sub.End.Start
+F.Intrinsic.Control.End
+
+Program.Sub.End.End
+
+program.sub.cmdbrowse_click.start
+'String array to hold Column Widths
+V.Local.widths.Declare(String)
+'String array to hold Column Titles
+V.Local.titles.Declare(String)
+'Selection result array String
+V.Local.results.Declare(String)
+V.Local.temp.Declare(String)
+V.Local.cancel.Declare(String)
+V.Local.sSQL.Declare(String)
+
+Gui.Partmain.lbl2.Caption("Start Point")
+
+'Store Browser Column titles into titles array
+F.Intrinsic.String.Split("PREFIX*!*PART*!*SUFFIX*!*DESCRIPTION","*!*",V.Local.titles)
+'Store Browser Column widths into array
+F.Intrinsic.String.Split("700*!*700*!*700*!*3000","*!*",V.Local.widths)
+
+'Execute GAB Browser
+F.Intrinsic.UI.Browser("Select Part Number","conn","Select PART_PREFIX_NO,PART_NO,PART_SUFFIX,DESCRIPTION from ATG_12_PART_GENERATOR ORDER BY PART_PREFIX_NO,PART_NO ASC",V.Local.titles,V.Local.widths,200,180,V.Local.results)
+'Split result string into array
+F.Intrinsic.String.Split(V.Local.results,"*!*",V.Local.results)
+'Return Part number to input into inventory maintenance screen.
+
+
+'If not canceled then enter part and rev
+F.Intrinsic.String.Instr(V.Local.results,"***CANCEL***",1,V.Local.cancel)
+F.Intrinsic.Control.If(V.Local.cancel,=,0)
+
+	F.Intrinsic.String.Concat("Select * from ATG_12_PART_GENERATOR where PART_PREFIX_NO='",V.Local.results(0),"' AND PART_NO='",V.Local.results(1),"' and PART_SUFFIX='",V.Local.results(2),"'",V.Local.sSQL)
+	F.ODBC.Connection!Conn.OpenRecordsetRW("r",V.Local.sSQL)
+	Gui.Partmain.txtPrefix.Text(V.Odbc.Conn!r.FieldValTrim!PART_PREFIX_NO)
+	Gui.Partmain.txtPart.Text(V.Odbc.Conn!r.FieldValTrim!PART_NO)
+	Gui.Partmain.txtSuffix.Text(V.Odbc.Conn!r.FieldValTrim!PART_SUFFIX)
+	Gui.Partmain.txtSortCode.Text(V.Odbc.Conn!r.FieldValTrim!SORT_CODE)
+	Gui.Partmain.txtinvUM.Text(V.Odbc.Conn!r.FieldValTrim!INV_UM)
+	Gui.Partmain.txtPurchUM.Text(V.Odbc.Conn!r.FieldValTrim!PURCH_UM)
+	Gui.Partmain.txtDescription.Text(V.Odbc.Conn!r.FieldValTrim!DESCRIPTION)
+	Gui.Partmain.txtDescription1.Text(V.Odbc.Conn!r.FieldValTrim!ALT_DESCRIPTION1)
+	Gui.Partmain.txtShape.Text(V.Odbc.Conn!r.FieldValTrim!PROPERTY)
+	Gui.Partmain.txtPL.Text(V.Odbc.Conn!r.FieldValTrim!PL)
+	Gui.Partmain.txtextra.Text(V.ODBC.Conn!r.FieldValTrim!EXTRA_DESCRIPTION)
+F.Intrinsic.Control.If(V.Odbc.Conn!r.FieldValTrim!SOURCE,<>,"")
+F.Intrinsic.Control.SelectCase(V.Odbc.Conn!r.FieldValTrim!SOURCE)
+	F.Intrinsic.Control.Case("P")
+		Gui.Partmain.ddSource.ListIndex(0)
+	F.Intrinsic.Control.Case("J")
+		Gui.Partmain.ddSource.ListIndex(1)
+	F.Intrinsic.Control.Case("M")
+		Gui.Partmain.ddSource.ListIndex(2)
+	F.Intrinsic.Control.Case("F")
+		Gui.Partmain.ddSource.ListIndex(3)
+	F.Intrinsic.Control.Case("C")
+		Gui.Partmain.ddSource.ListIndex(4)
+	F.Intrinsic.Control.Case("G")
+		Gui.Partmain.ddSource.ListIndex(5)
+F.Intrinsic.Control.EndSelect
+F.Intrinsic.Control.EndIf
+
+	F.ODBC.Conn!r.Close
+F.Intrinsic.Control.EndIf
+
+program.sub.cmdbrowse_click.end
+
+program.sub.cmdsave_click.start
+'Error message String
+V.Local.serror.Declare(String)
+
+F.Intrinsic.Control.If(V.Screen.Partmain!txtPrefix.Text,=,"")
+	F.Intrinsic.String.Concat(V.Local.serror,"Error PREFIX cannot be blank!",V.Ambient.NewLine,V.Local.serror)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.Screen.Partmain!txtPrefix.Text.isnumeric,=,false)
+	F.Intrinsic.String.Concat(V.Local.serror,"Error PREFIX must be a number!",V.Ambient.NewLine,V.Local.serror)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.Screen.Partmain!txtPart.Text,=,"")
+	F.Intrinsic.String.Concat(V.Local.serror,"Error Start Point cannot be blank!",V.Ambient.NewLine,V.Local.serror)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.Screen.Partmain!txtPART.Text.isnumeric,=,false)
+	F.Intrinsic.String.Concat(V.Local.serror,"Error Start Point must be a number!",V.Ambient.NewLine,V.Local.serror)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.Screen.Partmain!txtSuffix.Text,=,"")
+	F.Intrinsic.String.Concat(V.Local.serror,"Error SUFFIX cannot be blank!",V.Ambient.NewLine,V.Local.serror)
+F.Intrinsic.Control.EndIf
+
+'Display Error or Continue
+F.Intrinsic.Control.If(V.Local.serror,<>,"")
+	F.Intrinsic.UI.Msgbox(V.Local.serror)
+F.Intrinsic.Control.Else
+	F.Intrinsic.Control.CallSub("edit")
+F.Intrinsic.Control.EndIf
+
+program.sub.cmdsave_click.end
+
+program.sub.cmdclear_click.start
+Gui.Partmain.txtDescription.Text("")
+Gui.Partmain.txtDescription1.Text("")
+Gui.Partmain.txtinvUM.Text("")
+Gui.Partmain.txtPart.Text("")
+Gui.Partmain.txtPL.Text("")
+Gui.Partmain.txtPrefix.Text("")
+Gui.Partmain.txtPurchUM.Text("")
+Gui.Partmain.txtShape.Text("")
+Gui.Partmain.txtSortCode.Text("")
+Gui.Partmain.txtextra.Text("")
+Gui.Partmain.txtSuffix.Text("000")
+Gui.Partmain.ddSource.ListIndex(3)
+Gui.Partmain.lbl2.Caption("Start Point")
+
+program.sub.cmdclear_click.end
+
+program.sub.cmdglobal_click.start
+V.Local.filedir.Declare(String)
+V.Local.ldprogram.Declare(String)
+V.Local.filename.Declare(String)
+V.Local.partupload.Declare(String)
+V.Local.part.Declare(String)
+V.Local.um.Declare(String)
+V.Local.desc.Declare(String)
+V.Local.pl.Declare(String)
+V.Local.desc1.Declare(String)
+V.Local.filler.Declare(String)
+V.Local.filler.Redim(0,3)
+V.Local.source.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.prt.Declare(Long)
+V.Local.temp.Declare(String)
+
+'Create Part Upload Line
+F.Intrinsic.String.Concat(V.Screen.Partmain!txtPrefix.Text,"-",V.Screen.Partmain!txtPart.Text,"-",V.Screen.Partmain!txtSuffix.Text,V.Local.part)
+'Check if part exists
+F.Intrinsic.String.Concat("Select PART from V_INVENTORY_MSTR where PART='",V.Local.part,"'",V.Local.sSQL)
+F.ODBC.Connection!Conn.OpenRecordsetRW("rst",V.Local.sSQL)
+F.Intrinsic.Control.If(V.ODBC.Conn!rst.EOF,=,False)
+
+	F.Intrinsic.Control.DoUntil(V.ODBC.Conn!rst.EOF,=,True)
+		F.ODBC.Conn!rst.Close
+		F.Intrinsic.Control.CallSub(Cmdnew_click)
+		F.Intrinsic.String.Concat(V.Screen.Partmain!txtPrefix.Text,"-",V.Screen.Partmain!txtPart.Text,"-",V.Screen.Partmain!txtSuffix.Text,V.Local.part)
+
+		F.Intrinsic.String.Concat("Select PART from V_INVENTORY_MSTR where PART='",V.Local.part,"'",V.Local.sSQL)
+		F.ODBC.Connection!Conn.OpenRecordsetRW("rst",V.Local.sSQL)
+	F.Intrinsic.Control.Loop
+
+
+F.Intrinsic.Control.EndIf
+	F.ODBC.Conn!rst.Close
+
+F.Intrinsic.String.RPad(V.Local.part," ",20,V.Local.part)
+F.Intrinsic.String.RPad(V.Screen.Partmain!txtinvUM.Text," ",2,V.Local.um)
+F.Intrinsic.String.RPad(V.Screen.Partmain!txtDescription.Text," ",30,V.Local.Desc)
+F.Intrinsic.String.RPad(V.Screen.Partmain!txtPL.Text," ",3,V.Local.pl)
+F.Intrinsic.String.RPad(V.Screen.Partmain!txtDescription1.Text," ",30,V.Local.desc1)
+F.Intrinsic.String.RPad(V.Local.filler(0)," ",2,V.Local.filler(0))
+F.Intrinsic.String.RPad(V.Local.filler(1)," ",6,V.Local.filler(1))
+F.Intrinsic.String.RPad(V.Local.filler(2)," ",30,V.Local.filler(2))
+F.Intrinsic.String.RPad(V.Local.filler(3),0,15,V.Local.filler(3))
+
+F.Intrinsic.Control.If(V.Screen.Partmain!ddSource.Text,<>,"")
+	F.Intrinsic.Control.SelectCase(V.Screen.Partmain!ddSource.Text)
+		F.Intrinsic.Control.Case("Purch to Stock")
+			V.Local.source.Set("P")
+		F.Intrinsic.Control.Case("Purch to Job")
+			V.Local.source.Set("J")
+		F.Intrinsic.Control.Case("Manuf to Stock")
+			V.Local.source.Set("M")
+		F.Intrinsic.Control.Case("Manuf to Job")
+			V.Local.source.Set("F")
+		F.Intrinsic.Control.Case("Consign to Stock")
+			V.Local.source.Set("C")
+		F.Intrinsic.Control.Case("Consign to Job")
+			V.Local.source.Set("G")
+	F.Intrinsic.Control.EndSelect
+F.Intrinsic.Control.EndIf
+
+'Create Part Upload String and upload
+F.Intrinsic.String.Concat(V.Ambient.QuadQuote,V.Caller.CompanyCode,V.Caller.Terminal,"UPLOADED  ",V.Local.part,V.Local.um,V.Local.desc,V.Local.filler(0),V.Local.pl,V.Local.source,V.Local.filler(1),V.Local.desc1,V.Local.filler(2),V.Local.filler(3),V.Ambient.QuadQuote,V.Local.ldprogram)
+
+F.Intrinsic.String.Concat(V.Ambient.DblQuote,V.Local.ldprogram,V.Ambient.DblQuote,V.Local.ldprogram)
+F.Intrinsic.Task.LaunchGSSSync("QTE005C","-C ",V.Local.ldprogram)
+
+'Update Database for fields not created by upload
+
+F.Intrinsic.String.Concat("Select * from INVENTORY_MSTR where PART='",V.Local.part,"'",V.Local.sSQL)
+F.ODBC.Connection!Conn.OpenRecordsetRW("r",V.Local.sSQL)
+
+F.ODBC.Conn!r.Set!UM_PURCHASING(V.Screen.Partmain!txtPurchUM.Text)
+F.ODBC.Conn!r.Set!CODE_SORT(V.Screen.Partmain!txtSortCode.Text)
+F.ODBC.Conn!r.Set!FLAG_LOT(V.Screen.Partmain!txtlotbin.Text)
+F.ODBC.Conn!r.Update
+F.ODBC.Conn!r.Close
+F.Intrinsic.String.Concat("Select * from INVENTORY_MST2 where PART='",V.Local.part,"'",V.Local.sSQL)
+F.ODBC.Connection!Conn.OpenRecordsetRW("r",V.Local.sSQL)
+F.ODBC.Conn!r.Set!TEXT_INFO1(V.Screen.Partmain!txtShape.Text)
+F.ODBC.Conn!r.Set!TEXT_INFO2(V.Screen.Partmain!txtDescription1.Text)
+F.ODBC.Conn!r.Set!CODE_SOURCE(V.Local.source)
+F.ODBC.Conn!r.Update
+F.ODBC.Conn!r.Close
+F.ODBC.Connection!Conn.OpenRecordsetRW("r","Select * from EXTRA_TEXT")
+F.ODBC.Conn!r.AddNew
+F.ODBC.Conn!r.Set!PART(V.Local.part)
+F.ODBC.Conn!r.Set!TEXT_SEQUENCE("000001")
+F.Intrinsic.String.Right(V.Screen.Partmain!txtextra.Text,29,V.Local.temp)
+F.ODBC.Conn!r.Set!TEXT_LINE2(V.Local.temp)
+
+F.Intrinsic.String.left(V.Screen.Partmain!txtextra.Text,29,V.Local.temp)
+F.ODBC.Conn!r.Set!TEXT_LINE1(V.Local.temp)
+F.ODBC.Conn!r.Update
+F.ODBC.Conn!r.Close
+F.Intrinsic.String.Concat("Inventory part '",V.Local.part.Trim,"' created.",V.Local.sSQL)
+Function.Intrinsic.UI.Msgbox(V.Local.sSQL)
+
+program.sub.cmdglobal_click.end
+
+program.sub.cmddelete_click.start
+V.Local.sSQL.Declare(String)
+V.Local.sure.Declare(Long)
+
+F.Intrinsic.UI.Msgbox("Are you sure you want to DELETE this record?","Delete Record?",4,V.Local.sure)
+F.Intrinsic.Control.If(V.Local.sure,=,6)
+	F.Intrinsic.String.Concat("Select * from ATG_12_PART_GENERATOR where PART_PREFIX_NO='",V.Screen.Partmain!txtPrefix.text,"' and PART_NO='",V.Screen.Partmain!txtPart.Text,"'"," AND PART_SUFFIX='",V.Screen.Partmain!txtSuffix.Text,"'",V.Local.sSQL)
+	F.ODBC.Connection!Conn.OpenRecordsetRW("rs",V.Local.sSQL)
+	F.Intrinsic.Control.If(V.Odbc.Conn!rs.EOF,=,False)
+		F.ODBC.Conn!rs.Delete
+	F.Intrinsic.Control.EndIf
+	F.ODBC.Conn!rs.Close
+	F.Intrinsic.Control.CallSub("cmdclear_click")
+F.Intrinsic.Control.EndIf
+
+program.sub.cmddelete_click.end
+
+program.sub.txtprefix_change.start
+V.Local.sSQL.Declare(String)
+Gui.Partmain.lbl2.Caption("Start Point")
+f.Intrinsic.Control.If(V.Screen.Partmain!txtPrefix.Text.isnumeric,=,true)
+	F.Intrinsic.String.Concat("Select * from ATG_12_PART_GENERATOR where PART_PREFIX_NO='",V.Screen.Partmain!txtPrefix.Text,"' ",V.Local.sSQL)
+	F.ODBC.Connection!Conn.OpenRecordsetRW("r",V.Local.sSQL)
+	
+	F.Intrinsic.Control.If(V.Odbc.Conn!r.EOF,=,False)
+
+		Gui.Partmain.txtPrefix.Text(V.Odbc.Conn!r.FieldValTrim!PART_PREFIX_NO)
+		Gui.Partmain.txtPart.Text(V.Odbc.Conn!r.FieldValTrim!PART_NO)
+		Gui.Partmain.txtSuffix.Text(V.Odbc.Conn!r.FieldValTrim!PART_SUFFIX)
+		Gui.Partmain.txtSortCode.Text(V.Odbc.Conn!r.FieldValTrim!SORT_CODE)
+		Gui.Partmain.txtinvUM.Text(V.Odbc.Conn!r.FieldValTrim!INV_UM)
+		Gui.Partmain.txtPurchUM.Text(V.Odbc.Conn!r.FieldValTrim!PURCH_UM)
+		Gui.Partmain.txtDescription.Text(V.Odbc.Conn!r.FieldValTrim!DESCRIPTION)
+		Gui.Partmain.txtDescription1.Text(V.Odbc.Conn!r.FieldValTrim!ALT_DESCRIPTION1)
+		Gui.Partmain.txtShape.Text(V.Odbc.Conn!r.FieldValTrim!PROPERTY)
+		Gui.Partmain.txtPL.Text(V.Odbc.Conn!r.FieldValTrim!PL)
+		Gui.Partmain.txtextra.Text(V.ODBC.Conn!r.FieldValTrim!EXTRA_DESCRIPTION)
+		F.Intrinsic.Control.If(V.Odbc.Conn!r.FieldValTrim!SOURCE,<>,"")
+			F.Intrinsic.Control.SelectCase(V.Odbc.Conn!r.FieldValTrim!SOURCE)
+				F.Intrinsic.Control.Case("P")
+					Gui.Partmain.ddSource.ListIndex(0)
+				F.Intrinsic.Control.Case("J")
+					Gui.Partmain.ddSource.ListIndex(1)
+				F.Intrinsic.Control.Case("M")
+					Gui.Partmain.ddSource.ListIndex(2)
+				F.Intrinsic.Control.Case("F")
+					Gui.Partmain.ddSource.ListIndex(3)
+				F.Intrinsic.Control.Case("C")
+					Gui.Partmain.ddSource.ListIndex(4)
+				F.Intrinsic.Control.Case("G")
+					Gui.Partmain.ddSource.ListIndex(5)
+			F.Intrinsic.Control.EndSelect
+		F.Intrinsic.Control.EndIf
+
+
+
+	F.Intrinsic.Control.Endif
+	F.ODBC.Conn!r.Close
+F.Intrinsic.Control.EndIf
+
+
+program.sub.txtprefix_change.end
+
+Program.Sub.edit.Start
+V.Local.temp.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.inPart.Declare(String)
+V.Local.source.Declare(String)
+
+V.Local.Part.Declare(Long)
+V.Local.Part.Set(1)
+
+
+F.Intrinsic.String.Concat("Select * from ATG_12_PART_GENERATOR where PART_PREFIX_NO='",V.Screen.Partmain!txtPrefix.Text,"' AND PART_NO='",V.Screen.Partmain!txtPart.Text,"' AND PART_SUFFIX='",V.Screen.Partmain!txtSuffix.Text,"'",V.Local.sSQL)
+F.ODBC.Connection!Conn.OpenRecordsetRW("rs",V.Local.sSQL)
+F.Intrinsic.Control.If(V.Odbc.Conn!rs.EOF,=,True)
+	F.Intrinsic.Control.CallSub("generate")
+F.Intrinsic.Control.ElseIf(V.Global.new,=,True)
+	V.Global.new.Set(False)
+	F.Intrinsic.Control.CallSub("generate")
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Conn!rs.Set!PART_SUFFIX(V.Screen.Partmain!txtSuffix.Text)
+F.ODBC.Conn!rs.Set!Sort_Code(V.Screen.Partmain!txtSortCode.Text)
+F.ODBC.Conn!rs.Set!Inv_UM(V.Screen.Partmain!txtinvUM.Text)
+F.ODBC.Conn!rs.Set!Purch_UM(V.Screen.Partmain!txtPurchUM.Text)
+F.ODBC.Conn!rs.Set!Description(V.Screen.Partmain!txtDescription.Text)
+F.ODBC.Conn!rs.Set!Alt_Description1(V.Screen.Partmain!txtDescription1.Text)
+F.ODBC.Conn!rs.Set!Property(V.Screen.Partmain!txtShape.Text)
+F.ODBC.Conn!rs.Set!PL(V.Screen.Partmain!txtPL.Text)
+f.ODBC.Conn!rs.Set!EXTRA_DESCRIPTION(V.Screen.Partmain!txtextra.Text)
+
+F.Intrinsic.Control.If(V.Screen.Partmain!ddSource.Text,<>,"")
+	F.Intrinsic.Control.SelectCase(V.Screen.Partmain!ddSource.Text)
+		F.Intrinsic.Control.Case("Purch to Stock")
+			V.Local.source.Set("P")
+		F.Intrinsic.Control.Case("Purch to Job")
+			V.Local.source.Set("J")
+		F.Intrinsic.Control.Case("Manuf to Stock")
+			V.Local.source.Set("M")
+		F.Intrinsic.Control.Case("Manuf to Job")
+			V.Local.source.Set("F")
+		F.Intrinsic.Control.Case("Consign to Stock")
+			V.Local.source.Set("C")
+		F.Intrinsic.Control.Case("Consign to Job")
+			V.Local.source.Set("G")
+	F.Intrinsic.Control.EndSelect
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Conn!rs.Set!Source(V.Local.source)
+
+F.ODBC.Conn!rs.Update
+F.ODBC.Conn!rs.Close
+
+
+Program.Sub.edit.End
+
+Program.Sub.generate.Start
+'Add New record and Generate new part number
+V.Local.sSQL.Declare(String)
+V.Local.part.Declare(Long)
+V.Local.part.Set(1)
+V.Local.sPart.Declare(String)
+V.Local.spre.Declare(String)
+
+F.ODBC.Conn!rs.AddNew
+F.Intrinsic.String.LPad(V.Screen.Partmain!txtPrefix.Text,"0",3,V.Local.spre)
+F.ODBC.Conn!rs.Set!PART_PREFIX_NO(V.Local.spre)
+F.Intrinsic.String.Concat("Select PART_NO from ATG_12_PART_GENERATOR where PART_PREFIX_NO='",V.Screen.Partmain!txtPrefix.Text,"' and PART_SUFFIX='",V.Screen.Partmain!txtSuffix.Text,"'",V.Local.sSQL)
+F.ODBC.Connection!Conn.OpenRecordsetRO("rs2",V.Local.sSQL)
+
+'If Part Number does not exist then use it else increment part number until available part no is found.
+F.Intrinsic.Control.If(V.Odbc.Conn!rs2.EOF,=,True)
+	F.Intrinsic.String.LPad(V.Screen.Partmain!txtPart.Text,"0",5,V.Local.sPart)
+	F.ODBC.Conn!rs.Set!PART_NO(V.Local.sPart)
+	V.Local.Part.Set(V.Screen.Partmain!txtPart.Text)
+F.Intrinsic.Control.Else
+	V.Local.Part.Set(V.Screen.Partmain!txtPart.Text)
+	F.Intrinsic.String.Concat("Select * from ATG_12_PART_GENERATOR where PART_PREFIX_NO='",V.Screen.Partmain!txtPrefix.Text,"' AND PART_NO='",V.Screen.Partmain!txtPart.Text,"' AND PART_SUFFIX='",V.Screen.PartMain!txtSuffix.Text,"'",V.Local.sSQL)
+	F.ODBC.Connection!Conn.OpenRecordsetRW("rs3",V.Local.sSQL)
+	
+	F.Intrinsic.Control.DoUntil(V.Odbc.Conn!rs3.EOF,=,True)
+		F.Intrinsic.Math.Add(V.Local.Part,1,V.Local.Part)
+		F.Intrinsic.String.LPad(V.Local.part,"0",5,V.Local.sPart)
+		F.ODBC.Conn!rs3.Close
+		F.Intrinsic.String.Concat("Select * from ATG_12_PART_GENERATOR where PART_PREFIX_NO='",V.Screen.Partmain!txtPrefix.Text,"' AND PART_NO='",V.Local.spart,"' and PART_SUFFIX='",V.Screen.Partmain!txtSuffix.Text,"'",V.Local.sSQL)
+		F.ODBC.Connection!Conn.OpenRecordsetRW("rs3",V.Local.sSQL)
+	F.Intrinsic.Control.Loop
+
+'	F.Intrinsic.String.Concat("Select PART from V_INVENTORY_MSTR where PART='",V.Local.sPart,"'",V.Local.sSQL)
+'	F.ODBC.Connection!Conn.OpenRecordsetRO("rs4",V.Local.sSQL)
+	F.Intrinsic.String.LPad(V.Local.part,"0",5,V.Local.sPart)
+	F.ODBC.Conn!rs.Set!PART_NO(V.Local.sPart)
+
+F.Intrinsic.Control.EndIf
+'Set part number back to screen
+Gui.Partmain.txtPart.Text(V.Local.sPart)
+Gui.Partmain.txtPrefix.Text(V.Local.spre)
+
+F.ODBC.Conn!rs2.Close
+F.Intrinsic.Control.ExitSub
+
+Program.Sub.generate.End
+
+program.sub.cmdnew_click.start
+V.Global.new.Set(True)
+Gui.Partmain.lbl2.Caption("New Part")
+F.Intrinsic.Control.CallSub("cmdsave_click")
+
+program.sub.cmdnew_click.end
+
+
